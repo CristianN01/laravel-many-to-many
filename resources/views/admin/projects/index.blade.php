@@ -14,6 +14,9 @@
                             Type
                         </th>
                         <th scope="col">
+                            Technology
+                        </th>
+                        <th scope="col">
                             Title
                         </th>
                         <th scope="col">
@@ -36,6 +39,16 @@
                             <td style="color: {{ $project->type->color }}">
                                 {{ $project->type->name }}
                             </td>
+                            <td>
+                                @forelse ($project->technologyes as $technology)
+                                    {{ $technology->name }}
+                                @empty
+                                    <td>
+                                        No Technologyes
+                                    </td>
+                                @endforelse
+                            </td>
+
                             <td>
                                 <strong>{{ $project->title }}</strong>
                             </td>
